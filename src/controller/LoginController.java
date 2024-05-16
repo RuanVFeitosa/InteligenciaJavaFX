@@ -22,7 +22,7 @@ public class LoginController {
 	
 	
 	public void entrar() {
-		System.out.println("Tentativa de login... ");
+		System.out.println("Efetuando o login... ");
 		
 		//Logica de entrada
 		if (usuario.getText().equals("admin") && senha.getText().equals("admin")) {
