@@ -12,8 +12,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-
-<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.AgentesController">
    <children>
       <AnchorPane prefHeight="200.0" prefWidth="200.0">
          <children>
@@ -21,24 +20,37 @@
                <center>
                   <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
                      <children>
-                        <AnchorPane layoutX="14.0" layoutY="14.0" prefHeight="214.0" prefWidth="200.0" style="-fx-background-color: black;">
+                        <AnchorPane layoutY="14.0" prefHeight="297.0" prefWidth="200.0" style="-fx-background-color: black;">
                            <children>
                               <Text fill="WHITE" layoutX="14.0" layoutY="44.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nome do Agente">
                                  <font>
                                     <Font size="14.0" />
                                  </font>
                               </Text>
-                              <TextField layoutX="14.0" layoutY="48.0" prefHeight="3.0" prefWidth="175.0" />
+                              <TextField fx:id="nomeAgente" layoutX="14.0" layoutY="48.0" prefHeight="3.0" prefWidth="175.0" />
                               <Text fill="WHITE" layoutX="16.0" layoutY="102.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Patente">
                                  <font>
                                     <Font size="14.0" />
                                  </font>
                               </Text>
-                              <TextField layoutX="14.0" layoutY="106.0" prefHeight="25.0" prefWidth="173.0" />
-                              <Button layoutX="16.0" layoutY="156.0" mnemonicParsing="false" text="Adicionar" />
-                              <Button layoutX="121.0" layoutY="156.0" mnemonicParsing="false" text="Limpar" />
+                              <TextField fx:id="patenteAgente" layoutX="14.0" layoutY="106.0" prefHeight="25.0" prefWidth="173.0" />
+                              <Button layoutX="16.0" layoutY="206.0" mnemonicParsing="false" onAction="#cadastrar" text="Cadastrar" />
+                              <Button layoutX="121.0" layoutY="206.0" mnemonicParsing="false" onAction="#limpar" text="Limpar" />
+                              <TextField fx:id="iniciacaoAgente" layoutX="14.0" layoutY="167.0" prefHeight="25.0" prefWidth="173.0" />
+                              <Text fill="WHITE" layoutX="20.0" layoutY="163.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Data da Iniciação">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </Text>
                            </children>
                         </AnchorPane>
+                        <TableView fx:id="tabelaAgentes" layoutX="224.0" layoutY="21.0" prefHeight="200.0" prefWidth="222.0">
+                          <columns>
+                            <TableColumn fx:id="cAgente" prefWidth="75.0" text="Agentes" />
+                            <TableColumn fx:id="cPatente" prefWidth="75.0" text="Patente" />
+                              <TableColumn fx:id="cIniciacao" prefWidth="75.0" text="Iniciação" />
+                          </columns>
+                        </TableView>
                      </children>
                   </AnchorPane>
                </center>
@@ -64,14 +76,6 @@
                      </children>
                   </AnchorPane>
                </top>
-               <right>
-                  <TableView prefHeight="371.0" prefWidth="154.0" BorderPane.alignment="CENTER">
-                    <columns>
-                      <TableColumn prefWidth="75.0" text="Nome" />
-                      <TableColumn prefWidth="75.0" text="Patente" />
-                    </columns>
-                  </TableView>
-               </right>
             </BorderPane>
          </children>
       </AnchorPane>
